@@ -281,14 +281,6 @@
                 return urlParams.get(parameter) || defaultValue;
             }
 
-            let version1 = getUrlParam('v', version);
-            let className1 = getUrlParam('c', 'na');
-            
-            setVer(version1);
-            if(className1 !== 'na'){
-                openClass(className1);
-            }
-
             let openClass = ( name ) => {
                 let path = '/data/'+version+'/'+name+'.json';
 
@@ -362,6 +354,14 @@
 
                     document.getElementById('info').innerHTML = text
                 })
+            }
+            
+            let version1 = getUrlParam('v', version);
+            let className1 = getUrlParam('c', 'na');
+            
+            setVer(version1);
+            if(className1 !== 'na'){
+                openClass(className1);
             }
 
             let colourCode = (name) => {
