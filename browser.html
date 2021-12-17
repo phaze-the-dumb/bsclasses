@@ -215,6 +215,8 @@
                 document.getElementById('version').innerHTML = 'Game Version: ' + version;
 
                 loadClasses();
+
+                window.history.pushState({}, null, 'https://modtools.phazed.xyz/browser?v='+version);
             }
 
             let darkMode = ( on ) => {
@@ -355,7 +357,7 @@
                     document.getElementById('info').innerHTML = text
                 })
             }
-            
+
             let version1 = getUrlParam('v', version);
             let className1 = getUrlParam('c', 'na');
             
