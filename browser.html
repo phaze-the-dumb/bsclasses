@@ -276,6 +276,17 @@
                 return primitives[name] || name;
             }
 
+            let getUrlParam = (parameter, defaultValue) => {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(parameter) || defaultValue;
+            }
+
+            let className1 = getUrlParam('c', 'na');
+
+            if(className1 !== 'na'){
+                openClass(className1);
+            }
+
             let openClass = ( name ) => {
                 let path = '/data/'+version+'/'+name+'.json';
 
