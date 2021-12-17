@@ -229,7 +229,7 @@
 
             let loadClasses = async () => {
                 document.getElementById('loading').innerHTML = 'Loading... (Fetching Lists)';
-                let data = await fetch('/api/v1/'+version);
+                let data = await fetch('/names/'+version+'.json');
 
                 document.getElementById('loading').innerHTML = 'Loading... (Parsing Array)';
                 data = await data.json();
@@ -277,7 +277,7 @@
             }
 
             let openClass = ( name ) => {
-                let path = '/api/v1/'+version+'/'+name;
+                let path = '/data/'+version+'/'+name+'.json';
 
                 fetch(path).then(data => data.json()).then(data => {
                     let functions = data.Methods
