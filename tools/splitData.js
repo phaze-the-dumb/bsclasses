@@ -24,7 +24,7 @@ names.forEach((name, i) => {
             namesList.push(name.This.Name);
         } else{
             fs.writeFileSync('data/'+version+'/' + name.This.QualifiedCppName.split('::').join('.') + '.' + name.This.Name + '.json', JSON.stringify(name));
-            namesList.push(name.This.QualifiedCppName.split('::').join('.') + '.' + name.This.Name);
+            namesList.push(name.This.QualifiedCppName.split('::').join('.'));
         }
 
         console.log('Writing: '+i+'/'+names.length);
