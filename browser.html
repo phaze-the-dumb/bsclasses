@@ -417,7 +417,7 @@
 
                     words.forEach((word, i) => {
                         if(word.startsWith('GlobalNamespace::')){
-                            let name1 = words[i].split('');
+                            let name1 = words[i].split('::');
                             name1.shift();
 
                             words[i] = '<span class="nameSpaceType" onclick="openClass(\''+name1.join('.')+'\')">' + word + '</span>'
