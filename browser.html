@@ -287,6 +287,7 @@
                 let path = '/data/'+version+'/'+name+'.json';
 
                 fetch(path).then(data => data.json()).then(data => {
+                    window.history.pushState({}, null, 'https://modtools.phazed.xyz/browser?v='+version+'&c='+name);
                     let functions = data.Methods
                     let dynThingy = data.InstanceFields
                     let values = data.Properties
