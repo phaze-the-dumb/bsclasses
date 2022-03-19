@@ -2,7 +2,7 @@ let openClass = ( name ) => {
     let path = '/data/'+version+'/'+name+'.json';
 
     fetch(path).then(data => data.json()).then(data => {
-        window.history.pushState({}, null, 'https://modtools.phazed.xyz/browser?v='+version+'&c='+name);
+        window.history.pushState({}, null, '/browser?v='+version+'&c='+name);
         let functions = data.Methods
         let dynThingy = data.InstanceFields
         let values = data.Properties
@@ -90,8 +90,11 @@ let loadClasses = async () => {
 
     text += '<div class="search"><input type="text" id="search" oninput="search(this.value)" placeholder="Search Classes" name="Class Search" autocomplete="off"></div><div id="results">'
 
+
     data.forEach(item => {
-        text += '<div class="className" onclick="openClass(\''+item+'\')">' + item + '</div>';
+        let itemRaw = item;
+        if(item[0] === '.')itemRaw = item.replace('.', '')
+        text += '<div class="className" onclick="openClass(\''+item+'\')">' + itemRaw + '</div>';
     })
 
     text += '</div>'

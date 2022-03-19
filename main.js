@@ -1,4 +1,4 @@
-let version = '1.17.1';
+let version = '1.20.1';
 let darkmode = true;
 let nameList = [];
 
@@ -8,7 +8,7 @@ let setVer = (ver) => {
 
     loadClasses();
 
-    window.history.pushState({}, null, 'https://modtools.phazed.xyz/browser?v='+version);
+    window.history.pushState({}, null, '/browser?v='+version);
 }
 
 let darkMode = ( on ) => {
@@ -26,6 +26,7 @@ let search = ( filter ) => {
     let list = nameList.filter(x => x.toLowerCase().includes(filter.toLowerCase()))
 
     list.forEach(x => {
+        if(x[0] === '.')x = x.replace('.', '')
         text += '<div class="className" onclick="openClass(\''+x+'\')">' + x + '</div>';
     })
 
