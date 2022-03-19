@@ -29,11 +29,11 @@ names.forEach((name, i) => {
         } else{
             if(isDot){
                 fs.writeFileSync('data/'+version+'/' + (name.This.QualifiedCppName.split('::').join('.') + '.' + name.This.Name).replace('.', '') + '.json', JSON.stringify(name));
+                namesList.push((name.This.QualifiedCppName.split('::').join('.')).replace('.', ''));
             } else{
                 fs.writeFileSync('data/'+version+'/' + (name.This.QualifiedCppName.split('::').join('.') + '.' + name.This.Name) + '.json', JSON.stringify(name));
+                namesList.push(name.This.QualifiedCppName.split('::').join('.'));
             }
-            
-            namesList.push(name.This.QualifiedCppName.split('::').join('.'));
         }
 
         console.log('Writing: '+i+'/'+names.length);
