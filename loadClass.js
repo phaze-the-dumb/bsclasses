@@ -92,9 +92,8 @@ let loadClasses = async () => {
 
 
     data.forEach(item => {
-        let itemRaw = item;
-        if(item[0] === '.')itemRaw = item.replace('.', '')
-        text += '<div class="className" onclick="openClass(\''+item+'\')">' + itemRaw + '</div>';
+        if(item[0] === '.')item = item.replace('.', '')
+        text += '<div class="className" onclick="openClass(\''+item+'\')">' + item + '</div>';
     })
 
     text += '</div>'
