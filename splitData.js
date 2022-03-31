@@ -1,4 +1,4 @@
-const version = '1.20.1'
+const version = '1.21.0'
 
 const parsed = require('./parsed.json');
 const fs = require('fs');
